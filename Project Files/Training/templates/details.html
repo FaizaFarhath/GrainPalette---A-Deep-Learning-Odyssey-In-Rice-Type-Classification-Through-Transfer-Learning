@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Details – GrainPalette</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007BFF;
+        }
+        p {
+            line-height: 1.7;
+            color: #333;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .btn-home {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GrainPalette – Rice Type Classification</h1>
+
+        <h2>Project Overview</h2>
+        <p>This project uses deep learning to automatically classify different types of rice grains based on their image. The web interface allows users to upload an image of a rice grain, and the system predicts the rice type using a pre-trained CNN model.</p>
+
+        <h2>Objective</h2>
+        <ul>
+            <li>To build a deep learning model that can classify rice grain types accurately.</li>
+            <li>To create a user-friendly web interface using Flask.</li>
+            <li>To support farmers and researchers in quickly identifying rice types.</li>
+        </ul>
+
+        <h2>Technologies Used</h2>
+        <ul>
+            <li>Python & Flask (Web Framework)</li>
+            <li>TensorFlow & Keras (Deep Learning)</li>
+            <li>HTML/CSS (Frontend)</li>
+            <li>VS Code (IDE)</li>
+        </ul>
+
+        <h2>Model Architecture</h2>
+        <p>The model is built using transfer learning with <strong>MobileNetV2</strong> pre-trained on ImageNet. It has been fine-tuned on a custom rice grain dataset with multiple rice classes (e.g., Basmati, SonaMasoori, Jasmine, etc.).</p>
+
+        <h2>Dataset</h2>
+        <p>The dataset consists of thousands of labeled rice grain images categorized into different classes. It is split into training, validation, and testing sets.</p>
+
+        <h2>How It Works</h2>
+        <ul>
+            <li>User uploads an image via the homepage.</li>
+            <li>The image is processed and fed into the trained model.</li>
+            <li>The predicted rice type and confidence level are displayed.</li>
+        </ul>
+
+        <a href="{{ url_for('index') }}" class="btn-home">← Back to Home</a>
+    </div>
+</body>
+</html>

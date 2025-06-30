@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GrainPalette – Rice Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .upload-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 480px;
+            width: 100%;
+        }
+        h1 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .info-link {
+            margin-top: 20px;
+            display: block;
+            color: #333;
+            text-decoration: underline;
+        }
+        .hero-section {
+         background-image: url('{{ url_for("static", filename="images/rice_background.jpg") }}');
+         background-size: cover;
+         background-position: center;
+         height: 100vh;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+        }
+
+        .overlay {
+         background-color: rgba(0, 0, 0, 0.6);
+         color: white;
+         padding: 50px;
+         text-align: center;
+         border-radius: 10px;
+        }
+
+        .predict-btn {
+         margin-top: 20px;
+         padding: 10px 25px;
+         background-color: #007BFF;
+         color: white;
+         text-decoration: none;
+         font-size: 18px;
+         border-radius: 5px;
+        }
+
+        .predict-btn:hover {
+         background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark px-5" style="background-color: black;">
+        <a class="navbar-brand text-white" href="#">GRAINPALETTE</a>
+        <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{{ url_for('details') }}">Details</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{{ url_for('upload') }}">Upload</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="overlay">
+            <h1>Welcome to GrainPalette</h1>
+            <p>This model can detect rice type based on rice images.</p>
+            <a href="{{ url_for('upload') }}" class="btn predict-btn">Predict</a>
+        </div>
+    </div>
+
+</body>
+</html>
