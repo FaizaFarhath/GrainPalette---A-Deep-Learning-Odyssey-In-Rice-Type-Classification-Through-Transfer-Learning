@@ -39,6 +39,11 @@ def model_predict(img_path):
 @app.route('/')
 def home():
     return render_template('home.html')
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 @app.route('/predict',methods=['GET','POST'])
 def predict():
     form = UploadForm()
